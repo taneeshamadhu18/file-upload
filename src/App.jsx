@@ -2,7 +2,8 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from "react-router-d
 import { useState, useEffect } from "react";
 import Upload from "./components/Upload";
 import Preview from "./components/Preview";
-
+import Location from "./components/Location";
+import Summary from "./components/Summary";
 function App() {
   const [uploadedFile, setUploadedFile] = useState(() => {
     // Load from localStorage if available
@@ -21,6 +22,8 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Upload setUploadedFile={setUploadedFile} />} />
+        <Route path="/location" element={<Location />} />
+        <Route path="/summary" element={<Summary />} />
         <Route
           path="/preview"
           element={uploadedFile ? <Preview uploadedFile={uploadedFile} /> : <Navigate to="/" />}
@@ -31,3 +34,6 @@ function App() {
 }
 
 export default App;
+
+
+      

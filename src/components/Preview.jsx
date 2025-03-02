@@ -264,7 +264,7 @@ const Preview = ({ uploadedFile }) => {
     }));
     
     setActiveStep(3); // Go to location step
-    navigate("/home/taneesha1432/Desktop/file-upload-app/src/components/location.jsx");
+    navigate("/location");
   };
 
   const goToPrevious = () => {
@@ -320,9 +320,9 @@ const Preview = ({ uploadedFile }) => {
 
   if (files.length === 0) {
     return (
-      <div className="flex items-center justify-center h-screen bg-white text-green-800">
+      <div className="flex items-center justify-center h-screen bg-white text-blue-800">
         <p>No file uploaded. Go back to upload.</p>
-        <button className="ml-2 bg-green-600 px-4 py-2 rounded text-white" onClick={() => navigate("/upload")}>
+        <button className="ml-2 bg-blue-500 px-4 py-2 rounded text-white" onClick={() => navigate("/upload")}>
           Go Back
         </button>
       </div>
@@ -335,14 +335,14 @@ const Preview = ({ uploadedFile }) => {
     const fileType = file.type;
     
     if (fileType.includes("image") || fileName.endsWith(".heic") || fileName.endsWith(".heif")) 
-      return <Image className="text-green-600" size={20} />;
+      return <Image className="text-blue-500" size={20} />;
     if (fileType.includes("pdf")) 
-      return <FileText className="text-green-600" size={20} />;
+      return <FileText className="text-blue-500" size={20} />;
     if (fileType.includes("wordprocessingml") || fileName.endsWith(".docx")) 
-      return <FileText className="text-green-600" size={20} />;
+      return <FileText className="text-blue-500" size={20} />;
     if (fileType.includes("spreadsheetml") || fileName.endsWith(".xlsx")) 
-      return <FileSpreadsheet className="text-green-600" size={20} />;
-    return <FileText className="text-green-400" size={20} />;
+      return <FileSpreadsheet className="text-blue-500" size={20} />;
+    return <FileText className="text-blue-400" size={20} />;
   };
 
   // Get appropriate class based on orientation
@@ -383,7 +383,7 @@ const Preview = ({ uploadedFile }) => {
   };
 
   return (
-    <div className="flex flex-col items-center min-h-screen bg-white text-green-800 p-6">
+    <div className="flex flex-col items-center min-h-screen bg-white text-blue-800 p-6">
       {/* Logo */}
       <div className="flex items-center mb-8">
         <img src="src/components/print.jpeg" alt="Logo" className="h-8 w-8" />
@@ -393,9 +393,9 @@ const Preview = ({ uploadedFile }) => {
       <h1 className="text-2xl font-bold mb-6">Process</h1>
       
       <div className="w-full max-w-3xl flex justify-between items-center mb-10">
-        <div className={`flex flex-col items-center ${activeStep >= 1 ? 'text-green-600' : 'text-gray-400'}`}>
+        <div className={`flex flex-col items-center ${activeStep >= 1 ? 'text-blue-500' : 'text-gray-400'}`}>
           <div 
-            className={`w-8 h-8 rounded-full flex items-center justify-center cursor-pointer ${activeStep > 1 ? 'bg-green-500' : activeStep === 1 ? 'bg-green-600' : 'bg-gray-200'}`}
+            className={`w-8 h-8 rounded-full flex items-center justify-center cursor-pointer ${activeStep > 1 ? 'bg-blue-500' : activeStep === 1 ? 'bg-blue-500' : 'bg-gray-200'}`}
             onClick={() => {
               sessionStorage.setItem("activeStep", "1");
               navigate("/upload");
@@ -406,20 +406,20 @@ const Preview = ({ uploadedFile }) => {
           <span className="mt-1">Upload</span>
         </div>
         <div className="flex-1 h-1 bg-gray-200 mx-2">
-          <div className={`h-full bg-green-500 ${activeStep > 1 ? 'w-full' : 'w-0'}`}></div>
+          <div className={`h-full bg-blue-500 ${activeStep > 1 ? 'w-full' : 'w-0'}`}></div>
         </div>
-        <div className={`flex flex-col items-center ${activeStep >= 2 ? 'text-green-600' : 'text-gray-400'}`}>
-          <div className={`w-8 h-8 rounded-full flex items-center justify-center ${activeStep > 2 ? 'bg-green-500' : activeStep === 2 ? 'bg-green-600' : 'bg-gray-200'}`}>
+        <div className={`flex flex-col items-center ${activeStep >= 2 ? 'text-blue-500' : 'text-gray-400'}`}>
+          <div className={`w-8 h-8 rounded-full flex items-center justify-center ${activeStep > 2 ? 'bg-blue-500' : activeStep === 2 ? 'bg-blue-500' : 'bg-gray-200'}`}>
             {activeStep > 2 ? '✓' : '2'}
           </div>
           <span className="mt-1">Settings</span>
         </div>
         <div className="flex-1 h-1 bg-gray-200 mx-2">
-          <div className={`h-full bg-green-500 ${activeStep > 2 ? 'w-full' : 'w-0'}`}></div>
+          <div className={`h-full bg-blue-500 ${activeStep > 2 ? 'w-full' : 'w-0'}`}></div>
         </div>
-        <div className={`flex flex-col items-center ${activeStep >= 3 ? 'text-green-600' : 'text-gray-400'}`}>
+        <div className={`flex flex-col items-center ${activeStep >= 3 ? 'text-blue-500' : 'text-gray-400'}`}>
           <div 
-            className={`w-8 h-8 rounded-full flex items-center justify-center cursor-pointer ${activeStep > 3 ? 'bg-green-500' : activeStep === 3 ? 'bg-green-600' : 'bg-gray-200'}`}
+            className={`w-8 h-8 rounded-full flex items-center justify-center cursor-pointer ${activeStep > 3 ? 'bg-blue-500' : activeStep === 3 ? 'bg-blue-500' : 'bg-gray-200'}`}
             onClick={() => {
               if (activeStep > 3) {
                 sessionStorage.setItem("activeStep", "3");
@@ -432,11 +432,11 @@ const Preview = ({ uploadedFile }) => {
           <span className="mt-1">Location</span>
         </div>
         <div className="flex-1 h-1 bg-gray-200 mx-2">
-          <div className={`h-full bg-green-500 ${activeStep > 3 ? 'w-full' : 'w-0'}`}></div>
+          <div className={`h-full bg-blue-500 ${activeStep > 3 ? 'w-full' : 'w-0'}`}></div>
         </div>
-        <div className={`flex flex-col items-center ${activeStep >= 4 ? 'text-green-600' : 'text-gray-400'}`}>
+        <div className={`flex flex-col items-center ${activeStep >= 4 ? 'text-blue-500' : 'text-gray-400'}`}>
           <div 
-            className={`w-8 h-8 rounded-full flex items-center justify-center cursor-pointer ${activeStep === 4 ? 'bg-green-600' : 'bg-gray-200'}`}
+            className={`w-8 h-8 rounded-full flex items-center justify-center cursor-pointer ${activeStep === 4 ? 'bg-blue-500' : 'bg-gray-200'}`}
             onClick={() => {
               if (activeStep > 3) {
                 sessionStorage.setItem("activeStep", "4");
@@ -456,11 +456,11 @@ const Preview = ({ uploadedFile }) => {
           {/* Left column - File options and controls */}
           <div className="w-full md:w-2/5">
             {/* File List */}
-            <div className="bg-green-50 rounded-md p-4 mb-6 shadow">
+            <div className="bg-blue-50 rounded-md p-4 mb-6 shadow">
               <div className="flex justify-between items-center mb-3">
                 <h2 className="text-lg font-medium">Files ({files.length})</h2>
                 <button
-                  className="bg-green-600 text-white py-1 px-3 rounded-md hover:bg-green-700 transition flex items-center text-sm"
+                  className="bg-blue-500 text-white py-1 px-3 rounded-md hover:bg-blue-600 transition flex items-center text-sm"
                   onClick={addMoreFiles}
                 >
                   <Plus size={16} className="mr-1" /> Add More
@@ -471,7 +471,7 @@ const Preview = ({ uploadedFile }) => {
                 {files.map((file, index) => (
                   <div 
                     key={`${file.name}-${index}`} 
-                    className={`flex items-center justify-between p-2 mb-1 rounded ${activeFileIndex === index ? 'bg-green-100' : 'bg-white'} cursor-pointer shadow-sm`}
+                    className={`flex items-center justify-between p-2 mb-1 rounded ${activeFileIndex === index ? 'bg-blue-100' : 'bg-white'} cursor-pointer shadow-sm`}
                     onClick={() => setActiveFileIndex(index)}
                   >
                     <div className="flex items-center overflow-hidden">
@@ -495,7 +495,7 @@ const Preview = ({ uploadedFile }) => {
             {/* Add Files Dropzone (Hidden by default) */}
             {showDropzone && (
               <div
-                className="border-2 border-dashed border-green-300 rounded-md p-4 mb-6 flex flex-col items-center"
+                className="border-2 border-dashed border-blue-300 rounded-md p-4 mb-6 flex flex-col items-center"
                 onDrop={handleDrop}
                 onDragOver={handleDragOver}
               >
@@ -508,22 +508,22 @@ const Preview = ({ uploadedFile }) => {
                 />
                 
                 <button
-                  className="bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 transition mb-3 w-full"
+                  className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 transition mb-3 w-full"
                   onClick={() => fileInputRef.current.click()}
                 >
                   Browse Files
                 </button>
                 
-                <p className="text-center text-green-600 mb-2">or drop files here</p>
+                <p className="text-center text-blue-500 mb-2">or drop files here</p>
                 
                 <button
-                  className="text-green-600 hover:text-green-700"
+                  className="text-blue-500 hover:text-blue-600"
                   onClick={() => setShowDropzone(false)}
                 >
                   Cancel
                 </button>
                 
-                <p className="text-xs text-green-500 text-center mt-2">
+                <p className="text-xs text-blue-400 text-center mt-2">
                   Supported formats: PDF, Office (DOCX, XLSX), Images (JPG, PNG, WEBP)
                 </p>
               </div>
@@ -531,12 +531,12 @@ const Preview = ({ uploadedFile }) => {
 
             {/* Print Options Panel */}
             {files.length > 0 && activeFileIndex >= 0 && (
-              <div className="bg-green-50 rounded-md p-4 mb-6 shadow">
+              <div className="bg-blue-50 rounded-md p-4 mb-6 shadow">
                 <h2 className="text-lg font-medium mb-3">Print Options</h2>
                 
                 <div className="mb-3">
                   <label className="block text-sm mb-1">Pages</label>
-                  <select className="bg-white border border-green-200 rounded-md p-2 w-full text-green-800">
+                  <select className="bg-white border border-blue-200 rounded-md p-2 w-full text-blue-800">
                     <option>All</option>
                     <option>Custom Range</option>
                   </select>
@@ -545,7 +545,7 @@ const Preview = ({ uploadedFile }) => {
                 <div className="mb-3">
                   <label className="block text-sm mb-1">Color</label>
                   <select 
-                    className="bg-white border border-green-200 rounded-md p-2 w-full text-green-800"
+                    className="bg-white border border-blue-200 rounded-md p-2 w-full text-blue-800"
                     value={colorMode === "bw" ? "B&W" : "Color"}
                     onChange={handleColorModeChange}
                   >
@@ -557,7 +557,7 @@ const Preview = ({ uploadedFile }) => {
                 <div className="mb-3">
                   <label className="block text-sm mb-1">Orientation</label>
                   <select 
-                    className="bg-white border border-green-200 rounded-md p-2 w-full text-green-800"
+                    className="bg-white border border-blue-200 rounded-md p-2 w-full text-blue-800"
                     value={orientation === "portrait" ? "Portrait" : "Landscape"}
                     onChange={(e) => handleOrientationChange(e.target.value)}
                   >
@@ -569,7 +569,7 @@ const Preview = ({ uploadedFile }) => {
                 <div className="mb-3">
                   <label className="block text-sm mb-1">Margin</label>
                   <select 
-                    className="bg-white border border-green-200 rounded-md p-2 w-full text-green-800"
+                    className="bg-white border border-blue-200 rounded-md p-2 w-full text-blue-800"
                     value={margin.charAt(0).toUpperCase() + margin.slice(1)}
                     onChange={(e) => handleMarginChange(e.target.value)}
                   >
@@ -589,7 +589,7 @@ const Preview = ({ uploadedFile }) => {
                       max="200" 
                       value={zoomLevel}
                       onChange={handleZoomChange}
-                      className="w-full accent-green-600" 
+                      className="w-full accent-blue-500" 
                     />
                     <span className="text-sm ml-2">200%</span>
                   </div>
@@ -599,7 +599,7 @@ const Preview = ({ uploadedFile }) => {
           </div>
 
           {/* Right column - File preview */}
-          <div className="w-full md:w-3/5 bg-green-50 rounded-md min-h-64 flex items-center justify-center shadow">
+          <div className="w-full md:w-3/5 bg-blue-50 rounded-md min-h-64 flex items-center justify-center shadow">
             {/* File preview content */}
             {previewContent && files.length > 0 && activeFileIndex >= 0 ? (
               <div id="preview-content" className={getContainerClasses()}>
@@ -646,7 +646,7 @@ const Preview = ({ uploadedFile }) => {
             ) : (
               // No preview placeholder
               <div className="text-center p-6">
-                <p className="text-green-600 mb-2">
+                <p className="text-blue-500 mb-2">
                   {files.length === 0 
                     ? "No files uploaded. Add files to preview." 
                     : "Select a file to preview."}
@@ -660,14 +660,14 @@ const Preview = ({ uploadedFile }) => {
         {/* Navigation buttons */}
         <div className="flex justify-between mt-8">
           <button
-            className="bg-white border border-green-600 hover:bg-green-50 text-green-800 px-4 py-2 rounded-md flex items-center shadow"
+            className="bg-white border border-blue-500 hover:bg-blue-50 text-blue-700 px-4 py-2 rounded-md flex items-center shadow"
             onClick={goToPrevious}
           >
             <ArrowLeft size={16} className="mr-2" /> Previous
           </button>
           
           <button
-            className="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md flex items-center shadow"
+            className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md flex items-center shadow"
             onClick={goToNext}
           >
             Next <ArrowRight size={16} className="ml-2" />

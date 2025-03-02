@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+  import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { CheckCircle, MinusCircle, PlusCircle, Edit, FileText } from "lucide-react";
-import logo from "/home/taneesha1432/Desktop/file-upload-app/src/components/print.jpeg";
+import logo from "./print.jpeg";
 
 const Summary = () => {
   const [quantity, setQuantity] = useState(2);

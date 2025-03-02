@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { UploadCloud, CheckCircle, ArrowRight, Store, Printer, FileUp, MapPin } from "lucide-react";
-import logo from "/home/taneesha1432/Desktop/file-upload-app/src/components/print.jpeg";
-
-const location = () => {
+import logo from "./print.jpeg";
+import shopImage from "/home/taneesha1432/Desktop/file-upload-app/src/components/orintshop.jpg"; 
+const Location = () => {
   const [selectedShop, setSelectedShop] = useState(null);
   const navigate = useNavigate();
 
@@ -86,14 +86,13 @@ const location = () => {
         
         {/* Map */}
         <div className="w-full h-72 bg-gray-200 rounded-lg mb-6">
-          <iframe
-            src="https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=Melbourne,Victoria"
-            className="w-full h-full rounded-lg"
-            allowFullScreen
-            loading="lazy"
-          ></iframe>
-        </div>
-        
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d448181.2414180537!2d76.8130639441772!3d28.64727993513061!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd1f58537c19%3A0x55d1a6e3a9d94b3e!2sDelhi!5e0!3m2!1sen!2sin!4v1709376012345"
+    className="w-full h-full rounded-lg"
+    allowFullScreen
+    loading="lazy"
+  ></iframe>
+</div>
         {/* Print Shop List */}
         <div className="grid grid-cols-3 gap-4 mb-8">
           {[1, 2, 3].map((shop) => (
@@ -102,14 +101,17 @@ const location = () => {
               className={`border rounded-lg overflow-hidden cursor-pointer ${selectedShop === shop ? 'border-blue-500 ring-2 ring-blue-300' : 'border-gray-300'}`}
               onClick={() => setSelectedShop(shop)}
             >
-              <img 
-                src={`/api/placeholder/400/320`} 
-                alt={`Print Shop ${shop}`} 
-                className="w-full h-40 object-cover"
-              />
+             
+
+<img 
+  src={shopImage} 
+  alt={`Print Shop ${shop}`} 
+  className="w-full h-40 object-cover"
+/>
+
               <div className="p-3">
                 <h3 className="font-bold">Print Shop {shop}</h3>
-                <p className="text-sm text-gray-600">123 Street, Melbourne</p>
+                <p className="text-sm text-gray-600">8/3 1st cross, Bommanahalli Rd, Maruthi Layout, Devarachikkana Halli, Bengaluru, Karnataka 560076</p>
                 <p className="text-sm text-gray-600">Open: 9AM - 6PM</p>
               </div>
             </div>
@@ -131,4 +133,4 @@ const location = () => {
   );
 };
 
-export default location;
+export default Location;
