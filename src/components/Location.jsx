@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { UploadCloud, CheckCircle, ArrowRight, Store, Printer, FileUp, MapPin } from "lucide-react";
 import logo from "./print.jpeg";
-import shopImage from "src/components/orintshop.jpg"; 
+import shopImage from "./orintshop.jpg"; 
 const Location = () => {
   const [selectedShop, setSelectedShop] = useState(null);
   const navigate = useNavigate();
